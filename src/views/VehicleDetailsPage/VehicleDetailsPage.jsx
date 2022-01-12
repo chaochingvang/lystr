@@ -81,7 +81,7 @@ export default function VehicleDetailsPage() {
                   className="detailImages"
                   component="img"
                   image={photos[imageIndex]?.path}
-                  sx={{ height: '35vh', objectFit: 'fill' }}
+                  sx={{ height: '35vh', objectFit: 'contain' }}
                 />
               </Card>
               <br />
