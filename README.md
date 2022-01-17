@@ -37,7 +37,7 @@ LYSTR aims to make the connection between Watercraft Owners and people who want 
 
 In order to observe and use the functionalities of this application, the user will be required to sign up for a few third-party API keys. The required third-party APIs offers both free and paid services. The required API keys are as followed:
 
-- [Amazon Simple Storage Service (AWS S3)](https://aws.amazon.com/s3/">https://aws.amazon.com/s3/)
+- [Amazon Simple Storage Service (AWS S3)](https://aws.amazon.com/s3/")
 - [OpenCage Geocoding API](https://opencagedata.com/)
 
 ### Prerequisites
