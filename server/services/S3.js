@@ -7,13 +7,13 @@ const region = process.env.AWS_BUCKET_REGION;
 const accessKeyId = process.env.AWS_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_SECRET_KEY;
 
-const s3 = new aws.S3({
+const S3 = new aws.S3({
   region,
   accessKeyId,
   secretAccessKey,
 });
 
-// uploads file (from multer) to s3
+// uploads file (from multer) to S3
 function uploadFile(file) {
   // create a read stream with fs
   const fileStream = fs.createReadStream(file.path);
@@ -24,7 +24,7 @@ function uploadFile(file) {
     Key: file.filename, // name of file within the bucket (filename created by Multer)
   };
 
-  return s3.upload(uploadParams).promise();
+  return S3.upload(uploadParams).promise();
 }
 
 // downloads file from s3
@@ -33,7 +33,7 @@ function getFileStream(fileKey) {
     Key: fileKey, // created during upload
     Bucket: bucketName,
   };
-  return s3.getObject(downloadParams).createReadStream();
+  return S3.getObject(downloadParams).createReadStream();
 }
 
 // delete an object from the bucket
@@ -42,7 +42,7 @@ function deleteFile(fileKey) {
     Key: fileKey,
     Bucket: bucketName,
   };
-  return s3.deleteObject(deleteParams).promise();
+  return S3.deleteObject(deleteParams).promise();
 }
 
 module.exports = {
